@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: books_postgres
+    environment:
+      POSTGRES_DB: bookstore
+      POSTGRES_USER: bookapi
+      POSTGRES_PASSWORD: bookapi123
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - '5432:5432'
